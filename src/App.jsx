@@ -1,21 +1,23 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import Search from './components/Search'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchTerm, setSearchTerm] = useState('');
+
 
   return (
-    <>
-      <div className='flex justify-center items-center h-screen 
-      '>
-        <div className='flex flex-col justify-center items-center'>
-        <h1 className=' text-blue-600 font-mono text-7xl '>
-          COOKING...
-          </h1>
-          <img className='h-48 w-48 p-5' src="/logoBingeGoat.png" alt="" />
-          </div>
-      </div>
-    </>
+   <main>
+    <div className='pattern' />
+      <div className='wrapper'>
+        <header>
+          <img src="./hero.png" alt="hero-banner" />
+          <h1>Find <span className='text-gradient'>Movies</span> You'll Enjoy without the Hassle</h1>
+        </header>
+
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+     
+    </div>
+   </main>
   )
 }
 
